@@ -1,9 +1,11 @@
 run-database : 
 	python3 bloodhound-automation.py start -bp 10001 -np 10501 -wp 8001 my_project
-load-data : 
-	python3 bloodhound-automation.py data -z ESSOS_20240410083816_BloodHound-2.3.3.zip my_project
-	python3 bloodhound-automation.py data -z NORTH_20240410083414_BloodHound-2.3.3.zip my_project
-	python3 bloodhound-automation.py data -z SEVENKINGDOMS_20240410083609_BloodHound-2.3.3.zip my_project
+load-data-goadV2 : 
+	python3 bloodhound-automation.py data -z ./data/ESSOS_20240410083816_BloodHound-2.3.3.zip my_project
+	python3 bloodhound-automation.py data -z ./data/NORTH_20240410083414_BloodHound-2.3.3.zip my_project
+	python3 bloodhound-automation.py data -z ./data/SEVENKINGDOMS_20240410083609_BloodHound-2.3.3.zip my_project
+load-data-bloodhound-example-data : 
+	python3 bloodhound-automation.py data -z ./data/ad_example_data.zip my_project
 delete-project : 
 	python3 bloodhound-automation.py delete my_project
 clear-project : 
