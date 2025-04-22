@@ -10,8 +10,8 @@ delete-project :
 	python3 bloodhound-automation.py delete my_project
 clear-project : 
 	python3 bloodhound-automation.py clear my_project
-# run inside neo4j container to add gds if failed
-add-gds:
+# run inside neo4j container to add gds if failed (valid in wsl for windows, no need for macos)
+add-gds-wsl:
 	sudo docker exec my_project_graph-db_1 bash -c "\
 		apt update && \
 		apt install -y curl && \
